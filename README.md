@@ -2,16 +2,16 @@
 
 ### Examples collection to learn Node.JS  
 
-- [Node.JS CONVENTIONS](#nodejs-conventions)
+- [Node.JS Conventions](#nodejs-conventions)
 	* [Callbacks Conventions](#callback-conventions)
-- [ASYNCHRONOUS CALLBACK FUNCTIONS](#asynchronous-callback-functions)
+- [Asynchronous Callback Functions](#asynchronous-callback-functions)
 
 &nbsp;  
 
 &nbsp;  
 
 
-## NodeJS CONVENTIONS.
+## NodeJS Conventions.
 
 ### Callback Conventions.
 CALLBACKS COME LAST. In Node.js, if a function accepts in
@@ -75,7 +75,7 @@ function readJSON(filename, callback) {
 
 &nbsp;  
 
-## ASYNCHRONOUS &nbsp; CALLBACK &nbsp; FUNCTIONS
+## Asynchronous Callback Functions
 ```JavaScript
 // This example uses 3 files: index.js, mi_modulo.js, scratch.txt
 
