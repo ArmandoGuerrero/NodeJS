@@ -2,46 +2,51 @@
 
 ### Examples collection to learn Node.JS  
 
-- [NodeJS Conventions](#nodejs-conventions)
+- [Node.JS CONVENTIONS](#nodejs-conventions)
 	* [Callbacks Conventions](#callback-conventions)
+- [ASYNCHRONOUS CALLBACK FUNCTIONS](#asynchronous-callback-functions)
+
+&nbsp;  
+
+&nbsp;  
 
 
-
-
-
-## NodeJS Conventions.
+## NodeJS CONVENTIONS.
 
 ### Callback Conventions.
 CALLBACKS COME LAST. In Node.js, if a function accepts in
-input a callback, this has to be passed as the last argument:
+input a callback, this has to be passed as the last argument:  
+`fs.readFile(filename, [options], callback);`  
 
-fs.readFile(filename, [options], callback);
-
+&nbsp;  
 
 ERROR COMES FIRST. Any error produced is always passed as
 the first argument of the callback, and any actual result
 is passed starting from the second argument. If the operation
 succeeds without errors, the first argument will be null or
-undefined.
+undefined.  
 
+```JavaScript
 fs.readFile('foo.txt', 'utf8', function(err, data) {
   if(err)
     handleError(err);
   else
     processData(data);
 });
+```
+&nbsp;  
 
 The error must always be of type Error. This means that simple
-strings or numbers should never be passed as error objects.
+strings or numbers should never be passed as error objects.  
 
 PROPAGATING ERRORS.
 Propagating errors in synchronous is done
 with the well-known throw command, which causes the error to
-jump up in the call stack until it's caught.
+jump up in the call stack until it's caught.  
 
 In asynchronous, proper error propagation is done by simply
-passing the error to the next callback in the chain:
-
+passing the error to the next callback in the chain:  
+```JavaScript
 var fs = require('fs');
 function readJSON(filename, callback) {
   fs.readFile(filename, 'utf8', function(err, data) {
@@ -61,16 +66,17 @@ function readJSON(filename, callback) {
     callback(null, parsed);
   });
 };
-*/
+```
+&nbsp;  
 
+&nbsp;  
 
+&nbsp;  
 
+&nbsp;  
 
-
-/*   =  =  =  =  =  =  =  =  =  =  =  =  =  =  = */
-/*  BASIC  ASYNCHRONOUS   CALLBACK   FUNCTIONS   */ 
-/*   =  =  =  =  =  =  =  =  =  =  =  =  =  =  = */
-
+## ASYNCHRONOUS &nbsp; CALLBACK &nbsp; FUNCTIONS
+```JavaScript
 // This example uses 3 files: index.js, mi_modulo.js, scratch.txt
 
 // *index.js*:   ______________________________________________
@@ -103,3 +109,12 @@ exports.saluditos = function (mensaje) {
 // *scratch.txt*:   ___________________________________________
 
 "http://educanet.com.mx/line/blog/DocEducaNet.png"
+```
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
