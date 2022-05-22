@@ -1,14 +1,17 @@
 # NodeJS
 
+### Examples collection to learn Node.JS  
+
+- [NodeJS Conventions](#nodejs-conventions)
+	* [Callbacks Conventions](#callback-conventions)
 
 
 
 
 
+## NodeJS Conventions.
 
-## Node.js     callback     conventions
-/*   =  =  =  =  =  =  =  =  =  =  =  =  =  */
-/*
+### Callback Conventions.
 CALLBACKS COME LAST. In Node.js, if a function accepts in
 input a callback, this has to be passed as the last argument:
 
