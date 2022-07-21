@@ -131,6 +131,30 @@ exports.saluditos = function (mensaje) {
 
 
 ## Servers
+The simple destructured server:  
+
+```JavaScript
+function doOnIncoming(incomingData, functionsToSetOurOutgoingData){
+functionsToSetOurOutgoingData.end('Welcome to Twitter');
+}
+
+function doOnError(infoOnError){
+console.error(infoOnError);
+}
+
+server=http.createServer();
+server.listen(80);
+
+server.on('request', doOnIncoming)
+server.on('clientError',doOnError);  
+```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ```JavaScript
 http.createServer( function ( req, res ) {
 	res.writeHead(200, {'Content-Type': 'text/html'});
@@ -138,7 +162,7 @@ http.createServer( function ( req, res ) {
     res.end('<h1 style="color:red">This is the Tuesday token . . . . . . .</h1>');	
 }).listen(8000);
 console.log("Running . . .");
-
+```
 &nbsp;  
 
 &nbsp;  
