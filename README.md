@@ -143,17 +143,14 @@ console.error(infoOnError);
 }
 
 server=http.createServer();
-server.listen(80);
+server.listen(8000);
 
-server.on('request', doOnIncoming)
+server.on('request', doOnIncoming);
 server.on('clientError',doOnError);  
 ```
+&nbsp;  
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+Another flavor...
 
 ```JavaScript
 http.createServer( function ( req, res ) {
