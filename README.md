@@ -5,6 +5,7 @@
 - [Node.JS Conventions](#nodejs-conventions)
 	* [Callbacks Conventions](#callback-conventions)
 - [Asynchronous Callback Functions](#asynchronous-callback-functions)
+- [Servers](#servers)
 
 &nbsp;  
 
@@ -12,6 +13,15 @@
 
 
 ## NodeJS Conventions.
+
+***01***  
+Using javascript __dirname in a Node script will return the path of the folder where the current JavaScript file resides. Using ./ will give you the current working directory.  
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ### Callback Conventions.
 CALLBACKS COME LAST. In Node.js, if a function accepts in
@@ -114,6 +124,20 @@ exports.saluditos = function (mensaje) {
 &nbsp;  
 
 &nbsp;  
+
+&nbsp;  
+
+&nbsp;  
+
+
+## Servers
+```JavaScript
+http.createServer( function ( req, res ) {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<h1 style="color:green"> Hello MR OAX MEX ! ! !</h1>');
+    res.end('<h1 style="color:red">This is the Tuesday token . . . . . . .</h1>');	
+}).listen(8000);
+console.log("Running . . .");
 
 &nbsp;  
 
