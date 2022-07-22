@@ -150,16 +150,63 @@ server.on('clientError',doOnError);
 ```
 &nbsp;  
 
+Another flavor changing the *req* or *request* keyword,
+using *exo* instead when catching *app.on*.
+
+```JavaScript
+const port= 3000,
+http = require("http"),
+app = http.createServer();
+app.on("request", (exo, res) => {
+	console.log(exo.method);
+	console.log(exo.url);
+	console.log(exo.headers);
+	res.writeHead(200, {"Content-Type": "text/html"});
+	let responseMessage = "<h1>This will show on the screen.</h1>";
+	res.end(responseMessage);
+});
+app.listen(port);
+console.log(`Server listening on port:${port}`);
+```
+&nbsp;  
+
 Another flavor...
 
 ```JavaScript
+const http = require('http');
 http.createServer( function ( req, res ) {
-	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+    res.write(req.url);
     res.write('<h1 style="color:green"> Hello MR OAX MEX ! ! !</h1>');
-    res.end('<h1 style="color:red">This is the Tuesday token . . . . . . .</h1>');	
-}).listen(8000);
+    let html = '<h1 style="color:orange">Datos: ' + 
+			'<br /> y tambi&eacute;n su Id: 007' + '</h1>';
+		html += '<br /><h1>Hi Team  Ok...!</h1>';
+    res.end(html);
+    }).listen(8000);
 console.log("Running . . .");
 ```
+&nbsp;  
+
+Another Flavor...
+
+```JavaScript
+const port = 8000, http = require("http");
+app = http.createServer((request, response) => {
+	console.log("Received an incoming request!");
+	response.writeHead(200, {"Content-Type": "text/html"});
+	let responseMessage= "<h1>Hello, Universe! <br /></h1>";
+	response.write(responseMessage);
+	response.end();
+	console.log(`Sent a response : ${responseMessage}`);
+});
+app.listen(port);
+console.log(`Server listening on port: ${port}`);
+```
+
+&nbsp;  
+
+&nbsp;  
+
 &nbsp;  
 
 &nbsp;  
